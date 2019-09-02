@@ -1,0 +1,31 @@
+body {
+  font-family: Algerian;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+td {
+  min-width: 40px;
+  padding: 2px 5px;
+}
+
+.coach {
+  background: #eee;
+}
+
+@media print {
+  button {
+    display: none;
+  }
+}
+
+$font-size: 50px;
+.example {
+  font-size: $font-size;
+}
