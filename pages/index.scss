@@ -1,8 +1,21 @@
+body, html, #__next {
+  height: 100%;
+}
+
 body {
   font-family: Algerian;
+  background: #eee;
+}
+
+main {
+  width: 800px;
+  background: #fff;
+  min-height: 100%;
+  padding: 10px 7px;
 }
 
 table {
+  width: 100%;
   border-collapse: collapse;
 }
 
@@ -19,7 +32,13 @@ td {
   background: #eee;
 }
 
+.today {
+  float: right;
+  width: 150px;
+}
+
 @media print {
+
   button {
     display: none;
   }
