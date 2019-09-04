@@ -38,6 +38,7 @@ class Page extends React.Component {
     this.state = {
       list: null,
       members: null,
+      texts: {},
     }
 
     this.selectList = this.selectList.bind(this)
@@ -46,10 +47,13 @@ class Page extends React.Component {
   componentDidMount() {
     fetch('/api/data')
       .then(r => r.json())
-      .then((members) => {
-        members = members.sort((a, b) => (a.Efternamn || '').localeCompare(b.Efternamn))
+      .then((data) => {
+        const members = data.members.sort((a, b) => (a.Efternamn || '').localeCompare(b.Efternamn))
 
-        this.setState({ members })
+        this.setState({
+          members,
+          texts: data.texts,
+        })
       })
   }
 
@@ -59,13 +63,17 @@ class Page extends React.Component {
   }
 
   render() {
-    const { list, members } = this.state
+    const { list, members, texts } = this.state
 
     return (
-      <div>
-        { listSelector(listConfig, this.selectList) }
-        { displayList(list, members) }
-      </div>
+      <>
+        <nav>
+          { listSelector(listConfig, this.selectList) }
+        </nav>
+        <main>
+          { displayList(list, members, texts.info, texts.updated) }
+        </main>
+      </>
     )
   }
 }
@@ -80,7 +88,7 @@ const listSelector = (lists, selectHandler) => {
   )
 }
 
-const displayList = (list, members) => {
+const displayList = (list, members, infoText, updatedAt) => {
   if (!list || !members) return
 
   const coaches = members.filter(m => !!m.Tränare)
@@ -88,7 +96,10 @@ const displayList = (list, members) => {
 
   return (
     <>
+      <p className="today">Datum:</p>
       <h1>{list.name}</h1>
+      <p className="info-text">{infoText}</p>
+      <p className="updated-at">Uppdaterad: {updatedAt}</p>
       <table>
         <thead>
           <tr>
