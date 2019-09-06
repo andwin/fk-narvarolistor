@@ -7,27 +7,27 @@ const listConfig = [
   {
     name: 'Barngrupp 1',
     includeCoaches: true,
-    columns: ['Registrerad', 'Betalt', 'Typ', 'Moon', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
+    columns: ['Reg.', 'Bet.', 'Typ', 'Moon', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
   {
     name: 'Barngrupp 2',
     includeCoaches: true,
-    columns: ['Registrerad', 'Betalt', 'Typ', 'Moon', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
+    columns: ['Reg.', 'Bet.', 'Typ', 'Moon', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
   {
     name: 'Nybörjare',
     includeCoaches: true,
-    columns: ['Registrerad', 'Betalt', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
+    columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
   {
     name: 'Ungdomar',
     includeCoaches: true,
-    columns: ['Registrerad', 'Betalt', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
+    columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
   {
     name: 'Vuxna',
     includeCoaches: false,
-    columns: ['Registrerad', 'Betalt', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
+    columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
 ]
 
