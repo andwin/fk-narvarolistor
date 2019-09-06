@@ -36,6 +36,17 @@ main {
   width: $page-width;
 }
 
+h1 {
+  margin-top: 5px;
+}
+
+.today {
+  float: right;
+  font-weight: bold;
+  margin-top: 8px;
+  width: 250px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -58,14 +69,21 @@ td {
   background: #eee;
 }
 
-.today {
-  float: right;
-  width: 150px;
-}
-
 @media print {
   nav {
     display: none;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  h1 {
+    margin-top: 0px;
+  }
+
+  .today {
+    margin-top: 3px;
   }
 }
 
