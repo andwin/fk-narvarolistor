@@ -12,6 +12,20 @@ body {
 nav {
   margin: 0 auto;
   width: $page-width;
+  padding: 5px 0 15px 0;
+}
+
+button {
+  background-color: #777;
+  border: none;
+  color: white;
+  padding: 15px 18px;
+  margin: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 main {
@@ -50,8 +64,7 @@ td {
 }
 
 @media print {
-
-  button {
+  nav {
     display: none;
   }
 }

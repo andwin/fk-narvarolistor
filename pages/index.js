@@ -80,11 +80,11 @@ class Page extends React.Component {
 
 const listSelector = (lists, selectHandler) => {
   return (
-    <div>
+    <>
       {lists.map(list => (
         <button key={id()} type="button" onClick={() => selectHandler(list.name)}>{list.name}</button>
       ))}
-    </div>
+    </>
   )
 }
 
