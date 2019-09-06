@@ -23,6 +23,10 @@ table, th, td {
   border: 1px solid black;
 }
 
+th.narrow {
+  width: 50px;
+}
+
 td {
   min-width: 40px;
   padding: 2px 5px;

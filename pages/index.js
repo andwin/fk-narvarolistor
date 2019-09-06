@@ -94,6 +94,8 @@ const displayList = (list, members, infoText, updatedAt) => {
   const coaches = members.filter(m => !!m.Tränare)
   const listMembers = members.filter(m => !!m[list.name])
 
+  const narrowColumns = ['Reg.', 'Bet.', '']
+
   return (
     <>
       <p className="today">Datum:</p>
@@ -103,9 +105,10 @@ const displayList = (list, members, infoText, updatedAt) => {
       <table>
         <thead>
           <tr>
-            {list.columns.map(column => (
-              <th key={id()}>{column}</th>
-            ))}
+            {list.columns.map((column) => {
+              const className = narrowColumns.includes(column) ? 'narrow' : null
+              return <th key={id()} className={className}>{column}</th>
+            })}
           </tr>
         </thead>
         <tbody>
