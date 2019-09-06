@@ -120,8 +120,16 @@ const displayList = (list, members, infoText, updatedAt) => {
 const displayListRows = (members, columns, coaches = false) => {
   const style = coaches ? 'coach' : ''
 
+  let emptyLine = null
   if (coaches) {
     members = members.map(m => ({ Förnamn: m.Förnamn, Efternamn: m.Efternamn }))
+    emptyLine = (
+      <tr key={id()}>
+        {columns.map(() => (
+          <td key={id()}>&nbsp;</td>
+        ))}
+      </tr>
+    )
   }
 
   return (
@@ -133,6 +141,7 @@ const displayListRows = (members, columns, coaches = false) => {
           ))}
         </tr>
       ))}
+      {emptyLine}
     </>
   )
 }
