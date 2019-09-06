@@ -70,6 +70,10 @@ td {
 }
 
 @media print {
+  body {
+    background: none;
+  }
+
   nav {
     display: none;
   }
