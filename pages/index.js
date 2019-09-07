@@ -53,15 +53,13 @@ class Page extends React.Component {
   }
 }
 
-const listSelector = (lists, selectHandler) => {
-  return (
-    <>
-      {lists.map(list => (
-        <button key={id()} type="button" onClick={() => selectHandler(list.name)}>{list.name}</button>
-      ))}
-    </>
-  )
-}
+const listSelector = (lists, selectHandler) => (
+  <>
+    {lists.map(list => (
+      <button key={id()} type="button" onClick={() => selectHandler(list.name)}>{list.name}</button>
+    ))}
+  </>
+)
 
 const displayList = (list, members, infoText, updatedAt) => {
   if (!list || !members) return
