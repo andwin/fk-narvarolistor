@@ -66,7 +66,11 @@ const listSelector = (lists, selectHandler) => {
 const displayList = (list, members, infoText, updatedAt) => {
   if (!list || !members) return
 
-  const coaches = members.filter(m => !!m.Tränare)
+  const coaches = members.filter(m => !!m.Tränare).map(m => ({
+    Förnamn: m.Förnamn,
+    Efternamn: m.Efternamn,
+    Typ: 'Tränare',
+  }))
   const listMembers = members.filter(m => !!m[list.name])
 
   const narrowColumns = ['Reg.', 'Bet.', '']
@@ -87,7 +91,7 @@ const displayList = (list, members, infoText, updatedAt) => {
           </tr>
         </thead>
         <tbody>
-          {list.includeCoaches && displayListRows(coaches, list.columns, true)}
+          {list.includeCoaches && displayListRows(coaches, list.columns, 'coach')}
           {displayListRows(listMembers, list.columns)}
         </tbody>
       </table>
@@ -95,34 +99,17 @@ const displayList = (list, members, infoText, updatedAt) => {
   )
 }
 
-const displayListRows = (members, columns, coaches = false) => {
-  const style = coaches ? 'coach' : ''
-
-  let emptyLine = null
-  if (coaches) {
-    members = members.map(m => ({ Förnamn: m.Förnamn, Efternamn: m.Efternamn }))
-    emptyLine = (
-      <tr key={id()}>
-        {columns.map(() => (
-          <td key={id()}>&nbsp;</td>
+const displayListRows = (members, columns, className = null) => (
+  <>
+    {members.map(member => (
+      <tr key={id()} className={className}>
+        {columns.map(column => (
+          <td key={id()}>{member[column]}</td>
         ))}
       </tr>
-    )
-  }
-
-  return (
-    <>
-      {members.map(member => (
-        <tr key={id()} className={style}>
-          {columns.map(column => (
-            <td key={id()}>{member[column]}</td>
-          ))}
-        </tr>
-      ))}
-      {emptyLine}
-    </>
-  )
-}
+    ))}
+  </>
+)
 
 const id = () => Math.random().toString(36).substr(2, 9)
 
