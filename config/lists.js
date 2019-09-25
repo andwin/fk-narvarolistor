@@ -20,6 +20,11 @@ const lists = [
     columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
   {
+    name: 'Torsdagar',
+    includeCoaches: true,
+    columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
+  },
+  {
     name: 'Vuxna',
     includeCoaches: false,
     columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
