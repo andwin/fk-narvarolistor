@@ -1,56 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import fetch from 'node-fetch'
 import listConfig from '../config/lists'
 import Instructions from '../components/instructions'
 
 import './index.scss'
 
-class Page extends React.Component {
-  constructor(props) {
-    super(props)
+const Page = () => {
+  const [listName, setListName] = useState()
+  const [members, setMembers] = useState()
+  const [texts, setTexts] = useState({})
 
-    this.state = {
-      list: null,
-      members: null,
-      texts: {},
-    }
+  useEffect(() => {
+    fetchData(setMembers, setTexts)
+  }, [])
 
-    this.selectList = this.selectList.bind(this)
-  }
+  const list = listConfig.find(l => l.name === listName)
 
-  componentDidMount() {
-    fetch('/api/data')
-      .then(r => r.json())
-      .then((data) => {
-        const members = data.members.sort((a, b) => (a.Efternamn || '').localeCompare(b.Efternamn))
+  return (
+    <>
+      <nav>
+        { listSelector(listConfig, setListName) }
+      </nav>
+      <main>
+        { displayList(list, members, texts.info, texts.updated) }
+        { !list && <Instructions /> }
+      </main>
+    </>
+  )
+}
 
-        this.setState({
-          members,
-          texts: data.texts,
-        })
-      })
-  }
+const fetchData = (setMembers, setTexts) => {
+  fetch('/api/data')
+    .then(r => r.json())
+    .then((data) => {
+      const sortedMembers = data.members.sort((a, b) => (a.Efternamn || '').localeCompare(b.Efternamn))
 
-  selectList(name) {
-    const list = listConfig.find(l => l.name === name)
-    this.setState({ list })
-  }
-
-  render() {
-    const { list, members, texts } = this.state
-
-    return (
-      <>
-        <nav>
-          { listSelector(listConfig, this.selectList) }
-        </nav>
-        <main>
-          { displayList(list, members, texts.info, texts.updated) }
-          { !list && <Instructions /> }
-        </main>
-      </>
-    )
-  }
+      setMembers(sortedMembers)
+      setTexts(data.texts)
+    })
 }
 
 const listSelector = (lists, selectHandler) => (
