@@ -26,7 +26,7 @@ const lists = [
   },
   {
     name: 'Vuxna',
-    includeCoaches: false,
+    includeCoaches: true,
     columns: ['Reg.', 'Bet.', 'Förnamn', 'Efternamn', 'Mobilnummer', ''],
   },
 ]
