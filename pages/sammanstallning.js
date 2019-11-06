@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import readXlsxFile from 'read-excel-file'
+import removeSaturdays from '../utils/removeSaturdays'
 
 const Page = () => {
   const [data, setData] = useState({})
@@ -19,12 +20,13 @@ const Page = () => {
 
 const process = async (file) => {
   const rows = await readXlsxFile(file)
+  const filteredRows = removeSaturdays(rows)
 
-  const firstRow = rows.shift()
+  const firstRow = filteredRows.shift()
   const firstDate = getFirstDate(firstRow)
   const lastDate = getLastDate(firstRow)
 
-  const members = rows.map(getMemberStatistics)
+  const members = filteredRows.map(getMemberStatistics)
 
   return {
     firstDate,
