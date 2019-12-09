@@ -17,11 +17,11 @@
     "dotenv": "^8.2.0",
     "jest": "^24.9.0",
     "nest": "^0.1.6",
-    "next": "^9.1.2",
+    "next": "^9.1.5",
     "node-fetch": "^2.6.0",
     "node-sass": "^4.13.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "read-excel-file": "^4.0.3"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "read-excel-file": "^4.0.5"
   }
 }
