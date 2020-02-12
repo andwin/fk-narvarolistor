@@ -56,8 +56,7 @@ const displayList = (list, members, infoText, updatedAt) => {
     Efternamn: m.Efternamn,
     Typ: 'Tränare',
   }))
-  const listMembers = members.filter(m => !!m[list.name])
-
+  const listMembers = members.filter(m => m[list.name].trim().toLowerCase() === 'x')
   const narrowColumns = ['Reg.', 'Bet.', '']
 
   return (
