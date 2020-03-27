@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start -p ${PORT:-3000}",
-    "test": "eslint ."
+    "test": "eslint . && jest"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +15,6 @@
     "@zeit/next-sass": "^1.0.1",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
-    "jest": "^25.1.0",
     "nest": "^0.1.6",
     "next": "^9.3.1",
     "node-fetch": "^2.6.0",
@@ -25,6 +24,7 @@
     "read-excel-file": "^4.0.6"
   },
   "devDependencies": {
-    "@andwin/eslint-config": "0.0.3"
+    "@andwin/eslint-config": "0.0.3",
+    "jest": "^25.2.3"
   }
 }
