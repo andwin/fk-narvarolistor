@@ -35,13 +35,13 @@ const process = async (file) => {
   }
 }
 
-const getFirstDate = row => row.reduce((prev, curr) => {
+const getFirstDate = (row) => row.reduce((prev, curr) => {
   const d = Date.parse(curr)
   if (!d || d > Date.parse(prev)) return prev
   return curr
 })
 
-const getLastDate = row => row.reduce((prev, curr) => {
+const getLastDate = (row) => row.reduce((prev, curr) => {
   const d = Date.parse(curr)
   if (!d || d < Date.parse(prev)) return prev
   return curr
@@ -80,7 +80,7 @@ const renderStatistics = (data) => {
           <tr><th>Namn</th><th>Antal pass</th></tr>
         </thead>
         <tbody>
-          {members.map(m => (
+          {members.map((m) => (
             <tr key={m.name}>
               <td>{m.name}</td>
               <td>{m.count}</td>
