@@ -6,11 +6,11 @@ const textsUrl = process.env.TEXTS_URL
 
 const data = async (req, res) => {
   const membersCsv = await fetch(membersUrl)
-    .then((r) => r.text())
+    .then(r => r.text())
   const members = await csvtojson().fromString(membersCsv)
 
   const textsCsv = await fetch(textsUrl)
-    .then((r) => r.text())
+    .then(r => r.text())
 
   const texts = {}
   const rawTets = await csvtojson().fromString(textsCsv)

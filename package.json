@@ -24,7 +24,7 @@
     "read-excel-file": "^4.0.6"
   },
   "devDependencies": {
-    "@andwin/eslint-config": "0.0.3",
+    "@andwin/eslint-config": "0.0.5",
     "jest": "^25.2.3"
   }
 }

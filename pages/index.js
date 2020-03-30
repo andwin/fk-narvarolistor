@@ -14,7 +14,7 @@ const Page = () => {
     fetchData(setMembers, setTexts)
   }, [])
 
-  const list = listConfig.find((l) => l.name === listName)
+  const list = listConfig.find(l => l.name === listName)
 
   return (
     <>
@@ -31,7 +31,7 @@ const Page = () => {
 
 const fetchData = (setMembers, setTexts) => {
   fetch('/api/data')
-    .then((r) => r.json())
+    .then(r => r.json())
     .then((data) => {
       const sortedMembers = data.members.sort((a, b) => (a.Efternamn || '').localeCompare(b.Efternamn))
 
@@ -42,7 +42,7 @@ const fetchData = (setMembers, setTexts) => {
 
 const listSelector = (lists, selectHandler) => (
   <>
-    {lists.map((list) => (
+    {lists.map(list => (
       <button key={id()} type="button" onClick={() => selectHandler(list.name)}>{list.name}</button>
     ))}
   </>
@@ -51,12 +51,12 @@ const listSelector = (lists, selectHandler) => (
 const displayList = (list, members, infoText, updatedAt) => {
   if (!list || !members) return null
 
-  const coaches = members.filter((m) => !!m.Tränare).map((m) => ({
+  const coaches = members.filter(m => !!m.Tränare).map(m => ({
     Förnamn: m.Förnamn,
     Efternamn: m.Efternamn,
     Typ: 'Tränare',
   }))
-  const listMembers = members.filter((m) => m[list.name].trim().toLowerCase() === 'x')
+  const listMembers = members.filter(m => m[list.name].trim().toLowerCase() === 'x')
   const narrowColumns = ['Reg.', 'Bet.', '']
 
   return (
@@ -85,9 +85,9 @@ const displayList = (list, members, infoText, updatedAt) => {
 
 const displayListRows = (members, columns, className = null) => (
   <>
-    {members.map((member) => (
+    {members.map(member => (
       <tr key={id()} className={className}>
-        {columns.map((column) => (
+        {columns.map(column => (
           <td key={id()}>{member[column]}</td>
         ))}
       </tr>
