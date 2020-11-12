@@ -1,6 +1,8 @@
 import fetch from 'node-fetch'
 import csvtojson from 'csvtojson'
 
+require('dotenv').config()
+
 const membersUrl = process.env.MEMBERS_URL
 const textsUrl = process.env.TEXTS_URL
 

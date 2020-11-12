@@ -12,17 +12,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "csvtojson": "^2.0.10",
     "dotenv": "^8.2.0",
     "nest": "^0.1.6",
     "next": "^9.3.1",
     "node-fetch": "^2.6.1",
-    "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "read-excel-file": "^4.1.0"
+    "read-excel-file": "^4.1.0",
+    "sass": "^1.29.0"
   },
   "devDependencies": {
     "@andwin/eslint-config": "0.0.5",
