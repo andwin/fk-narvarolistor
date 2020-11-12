@@ -9,6 +9,10 @@
     "start": "next start -p ${PORT:-3000}",
     "test": "eslint . && jest"
   },
+  "engines": {
+    "node": "14",
+    "npm": "6"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
