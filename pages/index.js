@@ -3,8 +3,6 @@ import fetch from 'node-fetch'
 import listConfig from '../config/lists'
 import Instructions from '../components/instructions'
 
-import './index.scss'
-
 const Page = () => {
   const [listName, setListName] = useState()
   const [members, setMembers] = useState()
