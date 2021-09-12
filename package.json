@@ -27,7 +27,6 @@
     "sass": "^1.29.0"
   },
   "devDependencies": {
-    "@andwin/eslint-config": "^0.0.9",
-    "jest": "^27.1.1"
+    "@andwin/eslint-config": "^0.0.9"
   }
 }
