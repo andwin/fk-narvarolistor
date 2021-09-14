@@ -73,7 +73,7 @@ const displayList = (list, members, infoText, updatedAt) => {
           </tr>
         </thead>
         <tbody>
-          {list.includeCoaches && displayListRows(coaches, list.columns, 'coach')}
+          {displayListRows(coaches, list.columns, 'coach')}
           {displayListRows(listMembers, list.columns)}
         </tbody>
       </table>
