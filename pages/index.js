@@ -63,6 +63,20 @@ const displayList = (list, members, infoText, updatedAt) => {
       <h1>{list.name}</h1>
       <p className="info-text">{infoText}</p>
       <p className="updated-at">Uppdaterad: {updatedAt}</p>
+
+      <h2>Tränare som håller passet</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Förnamn</th><th>Efternamn</th><th className='narrow'></th>
+          </tr>
+        </thead>
+        <tbody>
+          {displayCoachesListRows(coaches, list.columns)}
+        </tbody>
+      </table>
+
+      <h2>Deltagare</h2>
       <table>
         <thead>
           <tr>
@@ -73,13 +87,24 @@ const displayList = (list, members, infoText, updatedAt) => {
           </tr>
         </thead>
         <tbody>
-          {displayListRows(coaches, list.columns, 'coach')}
           {displayListRows(listMembers, list.columns)}
         </tbody>
       </table>
     </>
   )
 }
+
+const displayCoachesListRows = (members) => (
+  <>
+    {members.map(member => (
+      <tr key={id()} className='coach'>
+        <td key={id()}>{member['Förnamn']}</td>
+        <td key={id()}>{member['Efternamn']}</td>
+        <td key={id()}></td>
+      </tr>
+    ))}
+  </>
+)
 
 const displayListRows = (members, columns, className = null) => (
   <>
