@@ -13,6 +13,10 @@ nav {
   margin: 0 auto;
   width: $page-width;
   padding: 5px 0 15px 0;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 button {

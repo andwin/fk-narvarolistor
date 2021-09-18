@@ -18,6 +18,7 @@ const Page = () => {
     <>
       <nav>
         { listSelector(listConfig, setListName) }
+        <a href="/admin">⚙️</a>
       </nav>
       <main>
         { displayList(list, members, texts.info, texts.updated) }
