@@ -99,9 +99,9 @@ const displayCoachesListRows = members => (
   <>
     {members.map(member => (
       <tr key={id()} className="coach">
-        <td key={id()}>{member['Förnamn']}</td>
-        <td key={id()}>{member.Efternamn}</td>
-        <td key={id()} />
+        <td>{member['Förnamn']}</td>
+        <td>{member.Efternamn}</td>
+        <td />
       </tr>
     ))}
   </>
