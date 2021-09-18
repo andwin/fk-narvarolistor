@@ -56,7 +56,7 @@ const displayList = (list, members, infoText, updatedAt) => {
     Typ: 'Tränare',
   }))
   const listMembers = members.filter(m => m[list.name].trim().toLowerCase() === 'x')
-  const narrowColumns = ['Reg.', 'Bet.', '']
+  const narrowColumns = ['Reg.', 'Bet.', 'X']
 
   return (
     <>
@@ -69,7 +69,7 @@ const displayList = (list, members, infoText, updatedAt) => {
       <table>
         <thead>
           <tr>
-            <th>Förnamn</th><th>Efternamn</th><th className="narrow"> </th>
+            <th>Förnamn</th><th>Efternamn</th><th className="narrow">X</th>
           </tr>
         </thead>
         <tbody>
